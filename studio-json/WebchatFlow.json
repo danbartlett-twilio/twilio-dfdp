@@ -1,0 +1,355 @@
+{
+    "description": "Bot flow for creating a Flex webchat task",
+    "states": [
+      {
+        "name": "Trigger",
+        "type": "trigger",
+        "transitions": [
+          {
+            "next": "splitPreEngagement",
+            "event": "incomingMessage"
+          },
+          {
+            "event": "incomingCall"
+          },
+          {
+            "event": "incomingConversationMessage"
+          },
+          {
+            "event": "incomingRequest"
+          },
+          {
+            "event": "incomingParent"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 0,
+            "y": -10
+          }
+        }
+      },
+      {
+        "name": "SendMessageToAgent",
+        "type": "send-to-flex",
+        "transitions": [
+          {
+            "event": "callComplete"
+          },
+          {
+            "event": "failedToEnqueue"
+          },
+          {
+            "event": "callFailure"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 350,
+            "y": 770
+          },
+          "workflow": "WWXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "channel": "TCXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "attributes": "{\"name\": \"{{trigger.message.ChannelAttributes.pre_engagement_data.customerID}}\", \"channelType\": \"{{trigger.message.ChannelAttributes.channel_type}}\", \"channelSid\": \"{{trigger.message.ChannelSid}}\",\"targetPage\":\"{{flow.variables.targetPage}}\",\"flowVariables\":\"Favorite Color::{{widgets.userInputExample.inbound.Body}}|MessageCreated::{{trigger.message.DateCreated}}|customerID::{{trigger.message.ChannelAttributes.pre_engagement_data.customerID}}|customerIntent::{{trigger.message.ChannelAttributes.pre_engagement_data.customerIntent}}|initialChatMessage::{{trigger.message.Body}}\"}"
+        }
+      },
+      {
+        "name": "splitPreEngagement",
+        "type": "split-based-on",
+        "transitions": [
+          {
+            "next": "setTargetPageDefault",
+            "event": "noMatch"
+          },
+          {
+            "next": "setTargetPageOrder",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "ORDER",
+                "arguments": [
+                  "{{trigger.message.ChannelAttributes.pre_engagement_data.customerIntent}}"
+                ],
+                "type": "equal_to",
+                "value": "Order"
+              }
+            ]
+          },
+          {
+            "next": "setTargetPageSupport",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "SUPPORT",
+                "arguments": [
+                  "{{trigger.message.ChannelAttributes.pre_engagement_data.customerIntent}}"
+                ],
+                "type": "equal_to",
+                "value": "Support"
+              }
+            ]
+          },
+          {
+            "next": "setTargetPageSales",
+            "event": "match",
+            "conditions": [
+              {
+                "friendly_name": "SALES",
+                "arguments": [
+                  "{{trigger.message.ChannelAttributes.pre_engagement_data.customerIntent}}"
+                ],
+                "type": "equal_to",
+                "value": "Sales"
+              }
+            ]
+          }
+        ],
+        "properties": {
+          "input": "{{trigger.message.ChannelAttributes.pre_engagement_data.customerIntent}}",
+          "offset": {
+            "x": -440,
+            "y": -40
+          }
+        }
+      },
+      {
+        "name": "setTargetPageDefault",
+        "type": "set-variables",
+        "transitions": [
+          {
+            "next": "sendGeneralMessage",
+            "event": "next"
+          }
+        ],
+        "properties": {
+          "variables": [
+            {
+              "value": "contact",
+              "key": "targetPage"
+            }
+          ],
+          "offset": {
+            "x": -540,
+            "y": 220
+          }
+        }
+      },
+      {
+        "name": "setTargetPageOrder",
+        "type": "set-variables",
+        "transitions": [
+          {
+            "next": "sendOrderMessage",
+            "event": "next"
+          }
+        ],
+        "properties": {
+          "variables": [
+            {
+              "value": "cart",
+              "key": "targetPage"
+            }
+          ],
+          "offset": {
+            "x": -190,
+            "y": 220
+          }
+        }
+      },
+      {
+        "name": "setTargetPageSupport",
+        "type": "set-variables",
+        "transitions": [
+          {
+            "next": "sendSupportMessage",
+            "event": "next"
+          }
+        ],
+        "properties": {
+          "variables": [
+            {
+              "value": "tickets",
+              "key": "targetPage"
+            }
+          ],
+          "offset": {
+            "x": 150,
+            "y": 220
+          }
+        }
+      },
+      {
+        "name": "setTargetPageSales",
+        "type": "set-variables",
+        "transitions": [
+          {
+            "next": "sendSalesMessage",
+            "event": "next"
+          }
+        ],
+        "properties": {
+          "variables": [
+            {
+              "value": "leads",
+              "key": "targetPage"
+            }
+          ],
+          "offset": {
+            "x": 510,
+            "y": 220
+          }
+        }
+      },
+      {
+        "name": "userInputExample",
+        "type": "send-and-wait-for-reply",
+        "transitions": [
+          {
+            "next": "connectingMessage",
+            "event": "incomingMessage"
+          },
+          {
+            "event": "timeout"
+          },
+          {
+            "event": "deliveryFailure"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": -570,
+            "y": 770
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "body": "Before we connect you to support, please reply with your favorite color.",
+          "timeout": "3600"
+        }
+      },
+      {
+        "name": "sendGeneralMessage",
+        "type": "send-message",
+        "transitions": [
+          {
+            "next": "userInputExample",
+            "event": "sent"
+          },
+          {
+            "event": "failed"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": -570,
+            "y": 460
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "to": "{{contact.channel.address}}",
+          "body": "Hello, we can connect you to a support agent."
+        }
+      },
+      {
+        "name": "sendOrderMessage",
+        "type": "send-message",
+        "transitions": [
+          {
+            "next": "userInputExample",
+            "event": "sent"
+          },
+          {
+            "event": "failed"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": -220,
+            "y": 460
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "to": "{{contact.channel.address}}",
+          "body": "We see that you would like to talk about an existing order."
+        }
+      },
+      {
+        "name": "sendSupportMessage",
+        "type": "send-message",
+        "transitions": [
+          {
+            "next": "userInputExample",
+            "event": "sent"
+          },
+          {
+            "event": "failed"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 130,
+            "y": 460
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "to": "{{contact.channel.address}}",
+          "body": "We see that you would like to talk about an existing support ticket."
+        }
+      },
+      {
+        "name": "sendSalesMessage",
+        "type": "send-message",
+        "transitions": [
+          {
+            "next": "userInputExample",
+            "event": "sent"
+          },
+          {
+            "event": "failed"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": 480,
+            "y": 460
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "to": "{{contact.channel.address}}",
+          "body": "We see that you would like to talk to sales about our products and services."
+        }
+      },
+      {
+        "name": "connectingMessage",
+        "type": "send-message",
+        "transitions": [
+          {
+            "next": "SendMessageToAgent",
+            "event": "sent"
+          },
+          {
+            "event": "failed"
+          }
+        ],
+        "properties": {
+          "offset": {
+            "x": -170,
+            "y": 770
+          },
+          "service": "{{trigger.message.InstanceSid}}",
+          "channel": "{{trigger.message.ChannelSid}}",
+          "from": "{{flow.channel.address}}",
+          "to": "{{contact.channel.address}}",
+          "body": "Excellent, thank you. Connecting you to a support agent."
+        }
+      }
+    ],
+    "initial_state": "Trigger",
+    "flags": {
+      "allow_concurrent_calls": true
+    }
+  }

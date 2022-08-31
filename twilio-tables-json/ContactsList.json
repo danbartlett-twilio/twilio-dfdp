@@ -1,0 +1,20 @@
+{
+    "listName":"ContactsList",
+    "listDescription":"a list of customers",
+    "columns":[
+        {"header":"First Name","columnType":"string","type":"string"},
+        {"header":"Last Name","columnType":"string","type":"string"},
+        {"header":"Phone Number","columnType":"string","type":"string"},
+        {"header":"Email","columnType":"string","type":"string"},
+        {"header":"Address","columnType":"string","type":"string"},
+        {"header":"City","columnType":"string","type":"string"},
+        {"header":"State","columnType":"string","type":"string"},
+        {"header":"Postal","columnType":"integer","type":"string"},
+        {"header":"Account Number","columnType":"integer","type":"integer"},
+        {"header":"isAdmin","columnType":"boolean"},
+        {"header":"ContactId","columnType":"string"},
+        {"header":"avatar","columnType":"string"},
+        {"header":"LastChannelSid","columnType":"string"}
+        ],
+    "items":[]
+}

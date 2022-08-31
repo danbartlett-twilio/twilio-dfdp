@@ -1,0 +1,1 @@
+{"listName":"CartList","listDescription":"List of all carts -- linked to Contacts","columns":[{"header":"CartId","columnType":"string"},{"header":"ContactId","columnType":"string"},{"header":"SubTotal","columnType":"currency"},{"header":"Tax","columnType":"currency"},{"header":"Total","columnType":"currency"},{"header":"OrderStatus","columnType":"string"}],"items":[]}

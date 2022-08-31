@@ -1,0 +1,22 @@
+{
+  "name": "flex-agent",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "vite build --emptyOutDir",
+    "dev": "vite --port 5050",
+    "preview": "vite preview --port 5050"
+  },
+  "dependencies": {
+    "@vuepic/vue-datepicker": "^3.4.6",
+    "pinia": "^2.0.13",
+    "short-uuid": "^4.2.0",
+    "vue": "^3.2.33",
+    "vue-router": "^4.0.15",
+    "vue-toastification": "^2.0.0-rc.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.1",
+    "vite": "^2.9.5",
+    "vue-cli-plugin-pinia": "~0.1.2"
+  }
+}

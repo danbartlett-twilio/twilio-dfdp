@@ -1,0 +1,1 @@
+{"listName":"TicketMessageList","listDescription":"Store messages related to a ticket.","columns":[{"header":"TicketId","columnType":"string"},{"header":"Author","columnType":"string"},{"header":"Message","columnType":"string"},{"header":"Created","columnType":"integer"}],"items":[]}

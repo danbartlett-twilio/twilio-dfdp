@@ -1,0 +1,24 @@
+{
+    "listName":"CatalogList",
+    "listDescription":"All products in catalog.",
+    "columns":[
+        {"header":"dscr","columnType":"string"},
+        {"header":"category","columnType":"string"},
+        {"header":"img","columnType":"string"},
+        {"header":"price","columnType":"currency"}
+        ],
+    "items":[
+        {"category":"Dairy","price":6.5,"dscr":"Milk","img":"food/milk.jpg"},
+        {"category":"Dairy","price":2.89,"dscr":"Eggs","img":"food/eggs.jpg"},
+        {"category":"Vegetable","price":2.34,"dscr":"Broccoli","img":"food/broccoli.jpg"},
+        {"category":"Grains","price":3.78,"dscr":"Cheerios","img":"food/cheerios.jpg"},
+        {"category":"Meat","price":14,"dscr":"Steak","img":"food/steak.jpg"},
+        {"category":"Grains","price":4.05,"dscr":"Lucky Charms","img":"food/lucky-charms.jpg"},
+        {"category":"Fruit","price":0.29,"dscr":"Banana","img":"food/banana.jpg"},
+        {"category":"Meat","price":7.25,"dscr":"Turkey","img":"food/turkey.jpg"},
+        {"category":"Treats","price":6.1,"dscr":"It's It","img":"food/its-it.jpg"},
+        {"category":"Treats","price":4.55,"dscr":"Ice Cream","img":"food/ice-cream.jpg"},
+        {"category":"Vegetable","price":1.45,"dscr":"Asparagus","img":"food/asparagus.jpg"},
+        {"category":"Fruit","price":1.675,"dscr":"Avocado","img":"food/avocado.jpg"}
+        ]
+}

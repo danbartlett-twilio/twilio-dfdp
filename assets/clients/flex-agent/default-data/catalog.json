@@ -1,0 +1,15 @@
+{"catalog":[
+    {"dscr":"Asparagus","category":"Vegetable","img":"asparagus.jpg","price":1.45},
+    {"dscr":"Avocado","category":"Fruit","img":"avocado.jpg","price":1.675},
+    {"dscr":"Banana","category":"Fruit","img":"banana.jpg","price":0.29},
+    {"dscr":"Broccoli","category":"Vegetable","img":"broccoli.jpg","price":2.34},
+    {"dscr":"Milk","category":"Dairy","img":"milk.jpg","price":4.95},
+    {"dscr":"Eggs","category":"Dairy","img":"eggs.jpg","price":2.89},            
+    {"dscr":"Cheerios","category":"Grains","img":"cheerios.jpg","price":3.78},
+    {"dscr":"Ice Cream","category":"Treats","img":"ice-cream.jpg","price":4.55},
+    {"dscr":"It's It","category":"Traits","img":"its-it.jpg","price":6.10},
+    {"dscr":"Lucky Charms","category":"Grains","img":"lucky-charms.jpg","price":4.05},
+    {"dscr":"Steak","category":"Meat","img":"steak.jpg","price":14.00},
+    {"dscr":"Turkey","category":"Meat","img":"turkey.jpg","price":7.25}
+]}
+

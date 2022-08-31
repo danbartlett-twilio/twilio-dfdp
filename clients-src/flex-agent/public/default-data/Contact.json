@@ -1,0 +1,16 @@
+{"sid":"ETca6628bb23fe4f3aa63f014d9c860112","uniqueName":"settingsDocOne",
+    "accountSid":"AC20511960a82d405c7cc488db2ab4911f","serviceSid":"IS4306646d00b465e5079a21a7aa2e6ad4","url":"https://sync.twilio.com/v1/Services/IS4306646d00b465e5079a21a7aa2e6ad4/Documents/ETca6628bb23fe4f3aa63f014d9c860112",
+    "links":{"permissions":"https://sync.twilio.com/v1/Services/IS4306646d00b465e5079a21a7aa2e6ad4/Documents/ETca6628bb23fe4f3aa63f014d9c860112/Permissions"},"revision":"0",
+    "data":{
+        "contact": {
+                "name":"Joe CustomerJ",
+                "phone":"+14155551212",
+                "email":"customer@twilio.com",
+                "address":"101 Spear Street",
+                "city":"San Francisco",
+                "state":"CA",
+                "postal":"94117",
+                "avatar":"http://www.clipartbest.com/cliparts/Kcn/XgK/KcnXgKpBi.jpg"                       
+            }
+    },
+    "dateExpires":null,"dateCreated":"2022-05-19T11:07:50.000Z","dateUpdated":"2022-05-19T11:07:50.000Z","createdBy":"system"}

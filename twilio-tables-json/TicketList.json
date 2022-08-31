@@ -1,0 +1,1 @@
+{"listName":"TicketList","listDescription":"List to store support tickets","columns":[{"header":"TicketId","columnType":"string"},{"header":"ContactId","columnType":"string"},{"header":"Subject","columnType":"string"},{"header":"TicketStatus","columnType":"string"},{"header":"Created","columnType":"integer"}],"items":[]}

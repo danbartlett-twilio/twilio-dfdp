@@ -1,0 +1,10 @@
+{
+    "items":[
+        {"dscr":"Steak","category":"Meat","img":"steak.jpg","price":14.00, "qty":2, "itemTotal":28},
+        {"dscr":"Turkey","category":"Meat","img":"turkey.jpg","price":7.25, "qty":3, "itemTotal":21}
+    ],
+    "totals":
+        {"subTotal":40,"tax":3,"total":104.00}
+        
+}
+
