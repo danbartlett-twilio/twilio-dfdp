@@ -44,7 +44,7 @@ The "customizable code base" at the bottom is what you will deploy from this rep
 
 ## Video Tutorials
 
-### [Introduction to DFDP -- What is it and what can it do?]([https://youtu.be/f8qunHlClZ4](https://youtu.be/Ln-PZgzh2us))
+### [Introduction to DFDP -- What is it and what can it do?](https://youtu.be/Ln-PZgzh2us)
 
 ### [Step-by-step DFDP Installtion](https://youtu.be/r-KxNoAKBJI)
 
