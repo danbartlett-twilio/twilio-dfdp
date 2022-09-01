@@ -45,7 +45,7 @@ export default {
             <button class="btn btn-sm btn-info"><i class="bi-life-preserver "></i></button>
           </router-link>
         </div> 
-        <div class="text-center px-2 mb-2" v-show="apss.settings?.showPages?.contacts">  
+        <div class="text-center px-2 mb-2">  
           <router-link class="text-light" to="/contacts" title="Contacts">
             <button class="btn btn-sm btn-info"><i class="bi-people "></i></button>
           </router-link>
