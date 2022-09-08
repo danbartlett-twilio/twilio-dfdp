@@ -1,6 +1,6 @@
 # twilio-dfdp (Deployable Flex Demo Platform)
 
-## A set of resources and patterns that deploy to YOUR OWN FLEX INSTANCE that allow creation more complex and custom Flex demos and POCs
+## A set of resources and patterns that deploy to YOUR OWN FLEX INSTANCE and allow creation of more complex and custom Flex demos and POCs
 
 We all agree that Flex is a programmable contact center, but how do we illustrate this point to people new to Flex? I have had success selling Flex using custom demos to help prospects understand how Flex is different and how that can make a big difference to their organization. All SEs should be able to spin up their own custom Flex demos.
 
