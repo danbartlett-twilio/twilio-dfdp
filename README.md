@@ -8,7 +8,7 @@ This repo contains a flex plugin, serverless apps, studio flows, and patterns th
 
 Here is an overview of everything including in this repo:
 
-IMAGE
+![DFDP Overview](/Image-DeployableFlexDemoPlatform.png "DFDP Overview")
 
 The "customizable code base" at the bottom is what you will deploy from this repo. You will use a Twilio Flex Instance, Twilio Functions, Twilio Sync, and Twilio Servics. Customers/Prospects will be able to interact with this platform via a single page application and their devices. Finally, a single page application for agents will be embedded into Flex for the agent's "single pane of glass".
 
