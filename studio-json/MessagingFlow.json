@@ -250,7 +250,7 @@
           "service": "{{trigger.message.InstanceSid}}",
           "channel": "{{trigger.message.ChannelSid}}",
           "from": "{{flow.channel.address}}",
-          "body": "{\"name\": \"{{trigger.message.ChannelAttributes.from}}\", \"channelType\": \"{{trigger.message.ChannelAttributes.channel_type}}\", \"channelSid\": \"{{trigger.message.ChannelSid}}\",\"targetPage\":\"{{flow.variables.targetPage}}\",\"flowVariables\":\"Favorite Color::{{widgets.userInputExample.outbound.Body}}|SupportRoute::{{flow.variables.supportRoute}}|MessageCreated::{{trigger.message.DateCreated}}\"}",
+          "body": "Before we connect you to support, please reply with your favorite color.",
           "timeout": "3600"
         }
       },
